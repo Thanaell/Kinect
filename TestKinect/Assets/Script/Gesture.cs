@@ -10,10 +10,12 @@ public abstract class Gesture : MonoBehaviour {
     protected bool isDetected;
     public abstract void detect();
     public TypeEvent myEvent=new TypeEvent();
-	// Use this for initialization
+    // Use this for initialization
+    public abstract void localStart();
 	void Start () {
         isDetected = false;
         myEvent.AddListener(handler.GestureDisplay);
+        localStart();
     }
 	
 	// Update is called once per frame
