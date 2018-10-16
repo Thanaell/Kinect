@@ -24,6 +24,7 @@ public abstract class Gesture : MonoBehaviour {
         if (isDetected)
         {
             myEvent.Invoke(this.GetType());
+            isDetected = false;
         }
 	}
 }
