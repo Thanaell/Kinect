@@ -337,6 +337,16 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0737527f539047b49b508eb6418c7052, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &528467666 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1118249906183250, guid: 0737527f539047b49b508eb6418c7052,
+    type: 2}
+  m_PrefabInternal: {fileID: 1736592057}
+--- !u!1 &869379751 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1049734843096382, guid: 0737527f539047b49b508eb6418c7052,
+    type: 2}
+  m_PrefabInternal: {fileID: 1736592057}
 --- !u!1 &1032411234
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,17 +451,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1613418934000884, guid: 0737527f539047b49b508eb6418c7052,
     type: 2}
   m_PrefabInternal: {fileID: 1736592057}
---- !u!114 &1193679026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1193679020}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9da818f2dbc04e44d8da2079e3b4857b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+--- !u!1 &1247327611 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1862505765701654, guid: 0737527f539047b49b508eb6418c7052,
+    type: 2}
+  m_PrefabInternal: {fileID: 1736592057}
 --- !u!1001 &1327938894
 Prefab:
   m_ObjectHideFlags: 0
@@ -673,12 +677,19 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1755380970}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f056354cf9710043817291bb92f1003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   handler: {fileID: 1755380971}
+  PointNumberAction: 100
+  deltaX: 0.1
+  deltaY: 0.05
+  distanceMaxX: 0.5
+  epauleDroite: {fileID: 1351143503}
+  coudeDroit: {fileID: 528467666}
+  mainDroite: {fileID: 1193679020}
 --- !u!114 &1755380973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,11 +702,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handler: {fileID: 1755380971}
-  FrameNumber: 4
-  PointNumberSwippe: 4
-  PointNumberAction: 20
-  deltaX: 0.01
+  PointNumberAction: 100
+  deltaX: 0.1
+  deltaY: 0.1
+  distanceMaxX: 0.4
   epauleDroite: {fileID: 1351143503}
+  coudeDroit: {fileID: 528467666}
   mainDroite: {fileID: 1193679020}
 --- !u!114 &1755380974
 MonoBehaviour:
@@ -709,11 +721,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handler: {fileID: 1755380971}
-  FrameNumber: 4
-  PointNumberSwippe: 4
-  PointNumberAction: 20
-  deltaX: 0.01
+  PointNumberAction: 100
+  deltaX: 0.1
+  deltaY: 0.1
+  distanceMaxX: 0.4
   epauleDroite: {fileID: 1351143503}
+  coudeDroit: {fileID: 528467666}
   mainDroite: {fileID: 1193679020}
 --- !u!114 &1755380975
 MonoBehaviour:
@@ -746,9 +759,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handler: {fileID: 1755380971}
-  FrameNumber: 4
-  PointNumberSwippe: 4
   PointNumberAction: 20
-  deltaZ: 0.01
+  deltaX: 0.1
+  deltaY: 0.1
   epauleDroite: {fileID: 1351143503}
+  coudeDroite: {fileID: 528467666}
   mainDroite: {fileID: 1193679020}
+--- !u!114 &1755380977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1755380970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6e99b0df7694040bbe8ca3a57e0fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handler: {fileID: 1755380971}
+  PointNumberAction: 120
+  deltaX: 0.1
+  deltaY: 0.1
+  epauleDroite: {fileID: 1351143503}
+  coudeDroit: {fileID: 528467666}
+  mainDroite: {fileID: 1193679020}
+  epauleGauche: {fileID: 869379751}
+  coudeGauche: {fileID: 1247327611}
+  mainGauche: {fileID: 1736592058}
+--- !u!114 &1755380979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1755380970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5af1c1a1aeca6dc4db2bcea6b8cfe696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handler: {fileID: 1755380971}
+  PointNumberAction: 30
+  deltaX: 0.05
+  disctanceMaxX: 1
+  deltaY: 0.1
+  mainDroite: {fileID: 1193679020}
+  mainGauche: {fileID: 1736592058}
