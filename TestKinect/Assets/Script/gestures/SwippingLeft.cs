@@ -18,7 +18,7 @@ public class SwippingLeft : Gesture
     float deltaY = 0.1f;
 
     [SerializeField]
-    float distanceMaxX = 0.f4;
+    float distanceMaxX = 0.4f;
 
 
     public GameObject epauleDroite;

@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TestConnection : MonoBehaviour {
-    public Rigidbody objectTest;
+    [SerializeField]
+    private GameObject objectTest;
 	// Use this for initialization
 	void Start () {
-        objectTest = GameObject.Find("TestConnection").GetComponent < Rigidbody >();
+        objectTest = GameObject.Find("TestConnection");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (objectTest.velocity == new Vector3(0,0,0))
+		if (objectTest.transform.position ==transform.position)
         {
             GetComponent<Renderer>().material.color = Color.red;
         }
