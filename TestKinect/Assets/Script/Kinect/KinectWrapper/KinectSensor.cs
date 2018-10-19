@@ -5,6 +5,7 @@ using System.Text;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using Kinect;
+using UnityEngine.SceneManagement;
 
 public class KinectSensor : MonoBehaviour, KinectInterface {
 	//make KinectSensor a singleton (sort of)
@@ -137,14 +138,14 @@ public class KinectSensor : MonoBehaviour, KinectInterface {
 			long kinectAngle = (long)(theta * (180 / Mathf.PI));
 			NativeMethods.NuiCameraSetAngle(kinectAngle);
 			
-			DontDestroyOnLoad(gameObject);
+			//DontDestroyOnLoad(gameObject);
 			KinectSensor.Instance = this;
 			NativeMethods.NuiSetDeviceStatusCallback(new NuiStatusProc(), IntPtr.Zero);
 		}
 		
 		catch (Exception e)
 		{
-			Debug.Log(e.Message);
+			//Debug.Log(e.Message);
 		}
 	}
 	

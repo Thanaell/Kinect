@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GestureHandler : MonoBehaviour {
     [SerializeField]
@@ -18,7 +19,13 @@ public class GestureHandler : MonoBehaviour {
 
     public void GestureDisplay(System.Type type)
     {
-        text.text = type.ToString();
-        Debug.Log(type);
+        string myType = type.ToString();
+        switch (myType)
+        {
+            case "Closing": SceneManager.LoadScene(0);
+                break;
+            default: text.text = type.ToString();
+                break;
+        }    
     }
 }
