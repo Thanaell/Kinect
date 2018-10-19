@@ -5,11 +5,6 @@ using UnityEngine;
 public class Punch :  Gesture
 {
 
-
-    //nombre de points prelevé pour considerer l'action SwippingLeft
-    [SerializeField]
-    int PointNumberAction = 50;
-
     [SerializeField]
     float deltaX = 0.1f;
 
@@ -22,7 +17,7 @@ public class Punch :  Gesture
     public GameObject mainDroite;
 
     bool FirstPosition;
-    int compteurBackwardForward=0;
+    float timerBackwardForward = 0;
 
     public override void localStart()
     {
@@ -38,16 +33,16 @@ public class Punch :  Gesture
                 Mathf.Abs(epauleDroite.transform.position.x - coudeDroite.transform.position.x) < deltaX)
             {
                 FirstPosition = true;
-                compteurBackwardForward = PointNumberAction ;
+                timerBackwardForward = gestureTime ;
 
             }
-            if (compteurBackwardForward > 0)
+            if (timerBackwardForward > 0)
             {
-                compteurBackwardForward--;
+                timerBackwardForward-=Time.deltaTime;
             }
             else
             {
-                compteurBackwardForward = 0;
+                timerBackwardForward = 0;
                 FirstPosition = false;
             }
 
@@ -55,11 +50,13 @@ public class Punch :  Gesture
                 Mathf.Abs(coudeDroite.transform.position.y - mainDroite.transform.position.y) < deltaY &
                 Mathf.Abs(epauleDroite.transform.position.x - coudeDroite.transform.position.x) < deltaX &
                 Mathf.Abs(epauleDroite.transform.position.y - coudeDroite.transform.position.y) < deltaY &
+                Mathf.Abs(epauleDroite.transform.position.x - mainDroite.transform.position.x) < deltaX &
+                Mathf.Abs(epauleDroite.transform.position.y - mainDroite.transform.position.y) < deltaY &
                 FirstPosition)
             {
                 isDetected = true;
                 FirstPosition = false;
-                compteurBackwardForward = 0;
+                timerBackwardForward = 0;
             }
 
         

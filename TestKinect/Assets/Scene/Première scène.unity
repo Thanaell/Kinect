@@ -847,6 +847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 487847948}
+  coolDown: 3
 --- !u!114 &1755380972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -859,13 +860,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handler: {fileID: 1755380971}
+  gestureTime: 2
   PointNumberAction: 100
-  deltaX: 0.1
   deltaY: 0.05
-  distanceMaxX: 0.5
-  epauleDroite: {fileID: 1351143503}
-  coudeDroit: {fileID: 528467666}
+  margeTeteY: 0.01
+  tete: {fileID: 1736592059}
   mainDroite: {fileID: 1193679020}
+  mainGauche: {fileID: 1736592058}
 --- !u!114 &1755380973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -878,7 +879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handler: {fileID: 1755380971}
-  PointNumberAction: 100
+  gestureTime: 4
   deltaX: 0.1
   deltaY: 0.1
   distanceMaxX: 0.4
@@ -897,7 +898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handler: {fileID: 1755380971}
-  PointNumberAction: 100
+  gestureTime: 4
   deltaX: 0.1
   deltaY: 0.1
   distanceMaxX: 0.4
@@ -916,10 +917,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handler: {fileID: 1755380971}
-  FrameNumber: 4
-  PointNumberSwippe: 4
-  PointNumberAction: 20
+  gestureTime: 4
   deltaY: 0.01
+  margeTeteY: 0.01
   tete: {fileID: 1736592059}
   mainDroite: {fileID: 1193679020}
   mainGauche: {fileID: 1736592058}
@@ -935,9 +935,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handler: {fileID: 1755380971}
-  PointNumberAction: 20
+  gestureTime: 2
   deltaX: 0.1
-  deltaY: 0.1
+  deltaY: 0.05
   epauleDroite: {fileID: 1351143503}
   coudeDroite: {fileID: 528467666}
   mainDroite: {fileID: 1193679020}
@@ -953,8 +953,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handler: {fileID: 1755380971}
-  PointNumberAction: 120
-  deltaX: 0.1
+  gestureTime: 1.5
+  deltaX: 0.5
   deltaY: 0.1
   epauleDroite: {fileID: 1351143503}
   coudeDroit: {fileID: 528467666}
@@ -985,9 +985,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handler: {fileID: 1755380971}
-  PointNumberAction: 30
+  gestureTime: 3
   deltaX: 0.05
-  disctanceMaxX: 1
+  disctanceMaxX: 0.8
   deltaY: 0.1
   mainDroite: {fileID: 1193679020}
   mainGauche: {fileID: 1736592058}

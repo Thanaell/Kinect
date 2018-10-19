@@ -8,6 +8,14 @@ public abstract class Gesture : MonoBehaviour {
     [SerializeField]
     private GestureHandler handler;
     protected bool isDetected;
+
+
+    [SerializeField]
+    protected float gestureTime=3;
+
+
+
+
     public abstract void detect();
     public TypeEvent myEvent=new TypeEvent();
     // Use this for initialization
@@ -21,10 +29,12 @@ public abstract class Gesture : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         detect();
-        if (isDetected)
+        if (isDetected )
         {
             myEvent.Invoke(this.GetType());
             isDetected = false;
         }
+       
+
 	}
 }

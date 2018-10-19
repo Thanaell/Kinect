@@ -3,17 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Closing : Gesture{
-    
-
-    //nombre de points prelevé pour considerer l'action SwippingLeft
-    [SerializeField]
-    int PointNumberAction = 30;
 
     [SerializeField]
     float deltaX = 0.05f;
 
     [SerializeField]
-    float disctanceMaxX= 1f;
+    float disctanceMaxX= 0.8f;
 
     [SerializeField]
     float deltaY = 0.1f;
@@ -24,12 +19,12 @@ public class Closing : Gesture{
     public GameObject mainGauche;
 
     bool FirstPosition;
-    int compteurOpenClose;
+    float timerOpenClose;
 
     public override void localStart()
     {
         FirstPosition = false;
-        compteurOpenClose = 0;
+        timerOpenClose = 0;
     }
 
     public override void detect()
@@ -40,16 +35,16 @@ public class Closing : Gesture{
         {
 
             FirstPosition = true;
-            compteurOpenClose = PointNumberAction ;
+            timerOpenClose = gestureTime ;
 
         }
-        if (compteurOpenClose > 0)
+        if (timerOpenClose > 0)
         {
-            compteurOpenClose--;
+            timerOpenClose-=Time.deltaTime;
         }
         else
         {
-            compteurOpenClose = 0;
+            timerOpenClose = 0;
             FirstPosition = false;
         }
 
@@ -57,10 +52,9 @@ public class Closing : Gesture{
            Mathf.Abs(mainDroite.transform.position.y - mainGauche.transform.position.y) < deltaY &
            FirstPosition)
         {
-            //Debug.Log("second");
             FirstPosition = false;
             isDetected = true;
-            compteurOpenClose = 0;
+            timerOpenClose = 0;
 
         }
 

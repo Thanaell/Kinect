@@ -5,12 +5,6 @@ using UnityEngine;
 public class SwippingLeft : Gesture
 {
 
-
-
-    //nombre de points prelevé pour considerer l'action SwippingLeft
-    [SerializeField]
-    int PointNumberAction = 100;
-
     [SerializeField]
     float deltaX = 0.1f;
 
@@ -26,16 +20,16 @@ public class SwippingLeft : Gesture
     public GameObject mainDroite;
 
     bool FirstPosition;
-    int compteurLeftRight;
+    float timerLeftRight;
     bool SecondPosition;
-    int compteurRightLeft;
+    float timerRightLeft;
 
     public override void localStart()
     {
         FirstPosition = false;
-        compteurLeftRight = 0;
+        timerLeftRight = 0;
         SecondPosition = false;
-        compteurRightLeft = 0;
+        timerRightLeft = 0;
     }
 
     public override void detect()
@@ -47,19 +41,19 @@ public class SwippingLeft : Gesture
             {
                 isDetected = true;
                 SecondPosition = false;
-                compteurRightLeft = 0;
+                timerRightLeft = 0;
             }
             FirstPosition = true;
-            compteurLeftRight = PointNumberAction / 2;
+            timerLeftRight = gestureTime;
 
         }
-        if (compteurLeftRight > 0)
+        if (timerLeftRight > 0)
         {
-            compteurLeftRight--;
+            timerLeftRight-=Time.deltaTime;
         }
         else
         {
-            compteurLeftRight = 0;
+            timerLeftRight = 0;
             FirstPosition = false;
         }
 
@@ -69,17 +63,17 @@ public class SwippingLeft : Gesture
             FirstPosition)
         {
             FirstPosition = false;
-            compteurLeftRight = 0;
-            compteurRightLeft = PointNumberAction / 2;
+            timerLeftRight = 0;
+            timerRightLeft = gestureTime;
             SecondPosition = true;
         }
-        if (compteurRightLeft > 0)
+        if (timerRightLeft > 0)
         {
-            compteurRightLeft--;
+            timerRightLeft-=Time.deltaTime;
         }
         else
         {
-            compteurRightLeft = 0;
+            timerRightLeft = 0;
             SecondPosition = false;
         }
 
