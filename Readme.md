@@ -1,12 +1,18 @@
-**Projet Kinect		**			*	Clavelin Gaëlle et Suleimanova Ramina*
+**Projet Kinect**			*Clavelin Gaëlle et Suleimanova Ramina*
 
 **Gestes (théoriquement) reconnus :**
+
 -*Balayage à droite* : position de départ coude droit au corps, main droite au-dessus du coude. On tend le bras vers la droite horizontalement en alignant épaule, coude, et main. Puis retour à la position de départ.
+
 -*Balayage à gauche* : position de départ coude droit au corps, main droite au-dessus du coude. On tend le bras vers la gauche horizontalement en alignant épaule, coude, et main. Puis retour à la position de départ.
+
 -*Balayage vers le haut* : position de départ avec les mains non écartées, en-dessous des épaules. On tend les deux bras vers le haut de façon à ce que les mains soient alignées horizontalement et au-dessus de la tête. Puis retour à la position de départ.
+
 -*Coup de poing* : position de départ coude droit au corps, main droite au-dessus du coude. On tend le bras vers la Kinect comme si on voulait donner un coup de poing en son centre. Puis retour à la position de départ.
--*Course* : les coudes on corps, on répète 4 fois : bras gauche plié vers le haut (main gauche sur l’épaule gauche) avec bras droit et avant-bras droit à 90degrés, puis l’inverse.
--*Fermeture* : les coudes au corps, on écarte les mains au maximum. Puis on les referme horizontalement devant soi. Ce geste sert à revenir au menu depuis la scène principale.
+
+-*Course* : les coudes au corps, on répète 4 fois : bras gauche plié vers le haut (main gauche sur l’épaule gauche) avec bras droit et avant-bras droit à 90degrés, puis l’inverse.
+
+-*Fermeture* : les mains à hauteur des épaules, on écarte les mains au maximum. Puis on les referme horizontalement devant soi. Ce geste sert à revenir au menu depuis la scène principale.
 
 La durée pour effectuer chaque geste peut être réglée dans les paramètres des scripts correspondants. Après la reconnaissance d’un geste, il faut attendre un cooldown pour en faire un autre. La valeur du cooldown est réglable dans le GestureHandler.
 
@@ -16,15 +22,23 @@ Ainsi, le geste est reconnu si on est passé de la position 1 à la position 2 e
 Une fois le geste reconnu, un évènement est envoyé au GestureHandler qui gère l’affichage et plus généralement, les actions à accomplir en réponse à un geste (par exemple, retourner au menu pour le geste Closing).
 
 **Pour utiliser le package KinectPackage :**
+
 -se placer dans une scène vide.
+
 -instancier les trois préfabs (KinectPréfab, GestureTracker, TestKinect).
+
 -relier les parties du corps du Tracker au Skeleton Wrapper du Kinect Prefab et mapper les parties du corps dans Kinect Point Controller (script du Tracker).
+
 -créer des zones de texte et les relier au TestConnection et au GestureHandler pour afficher l’état de la Kinect et les gestes reconnus.
 
 **Pour ajouter un nouveau geste :**
+
 -créer un script NomDuGeste.cs, héritant de Gesture.cs.
--lui donner en attributs les parties du corps dont il a besoin (qu’il faudra relier aux parties du SkeletonWrapper)
+
+-lui donner en attributs les parties du corps dont il a besoin (qu’il faudra relier aux parties du SkeletonWrapper).
+
 -implémenter la méthode localStart (qui sera appelée par le Start de Gesture.cs) pour initialiser les variables.
+
 -implémenter la méthode detect, qui passe le booléen isDetected à true quand le geste souhaité est détecté.
 
 **Evaluation :**
