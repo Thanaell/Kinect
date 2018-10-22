@@ -3,15 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class KeyboardInputHandler : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey(KeyCode.Escape))
+		if (Input.GetKey(KeyCode.Escape)) //retourne au menu sur appui de Escape
         {
             SceneManager.LoadScene(0);
         }

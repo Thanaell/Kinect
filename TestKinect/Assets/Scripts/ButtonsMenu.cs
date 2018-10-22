@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+//classe regroupant les méthodes appelées lorsqu'on clique sur un bouton du menu
 public class ButtonsMenu : MonoBehaviour {
 
     [SerializeField]

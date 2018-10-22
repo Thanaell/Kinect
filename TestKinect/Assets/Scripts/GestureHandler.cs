@@ -10,12 +10,12 @@ public class GestureHandler : MonoBehaviour {
     [SerializeField]
     private float coolDown = 3;
     private float timer;
-    // Use this for initialization
+
     void Start () {
         text.text = "Aucun geste détecté";
 	}
 	
-	// Update is called once per frame
+	// Si le timer est à 0, on est prêt à recevoir un geste. Sinon, on décrémente le timer.
 	void Update () {
 		
         if (timer <= 0)
@@ -30,12 +30,13 @@ public class GestureHandler : MonoBehaviour {
         }
     }
 
+
     public void GestureDisplay(System.Type type)
     {
-        if (timer <= 0)
+        if (timer <= 0) // si le temps n'est pas écoulé, on ignore les évènements
         {
             timer = coolDown;
-            string myType = type.ToString();
+            string myType = type.ToString(); // on récupère le type du geste reconnu en string
             switch (myType)
             {
                 case "Closing":

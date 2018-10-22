@@ -5,18 +5,18 @@ using UnityEngine.UI;
 
 public class TestConnection : MonoBehaviour {
     [SerializeField]
-    private GameObject objectTest;
+    private GameObject objectTest; //Objet qui va bouger comme la main droite
     [SerializeField]
     private Text connectionText;
     private Vector3 tempPosition;
-    // Use this for initialization
+    
     void Start () {
         objectTest = GameObject.Find("TestConnection");
         connectionText.text = "Pas de Kinect";
         tempPosition = objectTest.transform.position;
 	}
 	
-	// Update is called once per frame
+	// A chaque frame, on regarde si l'objet a bougé depuis la frame précédente. Si oui, c'est que le Kinect est connectée
 	void Update () {
 		if (objectTest.transform.position == tempPosition)
         {
