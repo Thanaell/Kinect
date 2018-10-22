@@ -12,7 +12,7 @@ public class TestConnection : MonoBehaviour {
     // Use this for initialization
     void Start () {
         objectTest = GameObject.Find("TestConnection");
-        connectionText.text = "No Kinect";
+        connectionText.text = "Pas de Kinect";
         tempPosition = objectTest.transform.position;
 	}
 	
@@ -20,14 +20,12 @@ public class TestConnection : MonoBehaviour {
 	void Update () {
 		if (objectTest.transform.position == tempPosition)
         {
-            GetComponent<Renderer>().material.color = Color.red;
-            connectionText.text = "No Kinect";
+            connectionText.text = "Pas de Kinect";
             connectionText.color = Color.red;
         }
         else
         {
-            GetComponent<Renderer>().material.color = Color.green;
-            connectionText.text = "Kinect detected";
+            connectionText.text = "Kinect détectée";
             connectionText.color = Color.green;
         }
         tempPosition = objectTest.transform.position;

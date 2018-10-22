@@ -12,7 +12,7 @@ public class GestureHandler : MonoBehaviour {
     private float timer;
     // Use this for initialization
     void Start () {
-        text.text = "No Gesture";
+        text.text = "Aucun geste détecté";
 	}
 	
 	// Update is called once per frame
@@ -20,7 +20,8 @@ public class GestureHandler : MonoBehaviour {
 		
         if (timer <= 0)
         {
-            text.text = "No gesture";
+            text.text = "Aucun geste détecté";
+            text.color = Color.white;
             timer = 0;
         }
         if (timer > 0)
@@ -43,6 +44,7 @@ public class GestureHandler : MonoBehaviour {
                     break;
                 default:
                     text.text = type.ToString();
+                    text.color = Color.green;
                     break;
             }
         }
