@@ -2,71 +2,57 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestGesture : Gesture {
-    //nombre de points prelevé pour considerer l'action SwippingLeft
-    [SerializeField]
-    int PointNumberAction = 100;
+public class TestGesture : Gesture
+{
 
     [SerializeField]
-    float deltaY = 0.08f;
-
-    [SerializeField]
-    float margeTeteY = 0.01f;
-
-    public GameObject tete;
-    public GameObject mainDroite;
-    public GameObject mainGauche;
-
-    int compteurDownUp;
-    int compteurUpDown;
-
-    bool isUp;
-    bool isDown;
+    float deltaZ = 0.1f;
     
+
+    [SerializeField]
+    float distanceMaxZ = 0.4f;
+
+
+    public GameObject epauleDroite;
+    public GameObject coudeDroit;
+    public GameObject mainDroite;
+
+    bool FirstPosition;
+    float timerLeftRight;
 
     public override void localStart()
     {
-        compteurDownUp = 0;
-        compteurUpDown = 0;
-        isUp = false;
-        isDown = false;
+        FirstPosition = false;
+        timerLeftRight = 0;
     }
 
     public override void detect()
     {
-        if (Mathf.Abs(mainDroite.transform.position.y-mainGauche.transform.position.y)<deltaY &
-            mainDroite.transform.position.y<tete.transform.position.y-margeTeteY &
-            mainGauche.transform.position.y < tete.transform.position.y - margeTeteY)
+
+        if (Mathf.Abs(epauleDroite.transform.position.z - mainDroite.transform.position.z) < deltaZ)
         {
-            if (isUp)
-            {
-                isDetected = true;
-                compteurUpDown = 0;
-                isUp = false;
-            }
-            isDown = true;
-            compteurDownUp = PointNumberAction / 2;
+            Debug.Log("true");
+            FirstPosition = true;
+            timerLeftRight = gestureTime;
+
         }
-        if (compteurDownUp > 0)
+        if (timerLeftRight > 0)
         {
-            compteurDownUp--;
+            timerLeftRight -= Time.deltaTime;
         }
         else
         {
-            compteurDownUp = 0;
-            isDown = false;
+            timerLeftRight = 0;
+            FirstPosition = false;
         }
 
-        if (Mathf.Abs(mainDroite.transform.position.y - mainGauche.transform.position.y) < deltaY &
-            mainDroite.transform.position.y > tete.transform.position.y + margeTeteY &
-            mainGauche.transform.position.y > tete.transform.position.y + margeTeteY &
-            isDown)
+        if (mainDroite.transform.position.z - coudeDroit.transform.position.z > distanceMaxZ &
+            coudeDroit.transform.position.z - epauleDroite.transform.position.z > distanceMaxZ &
+             FirstPosition)
         {
-           
-            isDown = false;
-            compteurDownUp = 0;
-            compteurUpDown = PointNumberAction / 2;
-            isUp = true;
+            FirstPosition = false;
+            timerLeftRight = 0;
+            isDetected = true;
         }
 
     }
