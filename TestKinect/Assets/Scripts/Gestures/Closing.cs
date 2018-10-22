@@ -17,6 +17,7 @@ public class Closing : Gesture{
     public GameObject mainDroite;
     
     public GameObject mainGauche;
+    public GameObject tete;
 
     bool FirstPosition;
     float timerOpenClose;
@@ -31,7 +32,8 @@ public class Closing : Gesture{
     {
 
         if (mainDroite.transform.position.x-mainGauche.transform.position.x > disctanceMaxX &
-            Mathf.Abs(mainDroite.transform.position.y-mainGauche.transform.position.y)<deltaY)
+            Mathf.Abs(tete.transform.position.y-mainGauche.transform.position.y)<deltaY &
+            Mathf.Abs(tete.transform.position.y - mainDroite.transform.position.y) < deltaY)
         {
 
             FirstPosition = true;
@@ -49,7 +51,9 @@ public class Closing : Gesture{
         }
 
         if (Mathf.Abs(mainDroite.transform.position.x-mainGauche.transform.position.x)<deltaX &
-           Mathf.Abs(mainDroite.transform.position.y - mainGauche.transform.position.y) < deltaY &
+           //Mathf.Abs(mainDroite.transform.position.y - mainGauche.transform.position.y) < deltaY &
+           Mathf.Abs(tete.transform.position.y - mainGauche.transform.position.y) < deltaY &
+            Mathf.Abs(tete.transform.position.y - mainDroite.transform.position.y) < deltaY &
            FirstPosition)
         {
             FirstPosition = false;
