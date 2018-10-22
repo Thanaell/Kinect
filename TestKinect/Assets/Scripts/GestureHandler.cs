@@ -35,18 +35,32 @@ public class GestureHandler : MonoBehaviour {
         if (timer <= 0)
         {
             timer = coolDown;
-
             string myType = type.ToString();
             switch (myType)
             {
                 case "Closing":
                     SceneManager.LoadScene(0);
                     break;
+                case "Punch":
+                    text.text = "Coup de poing";
+                    break;
+                case "SwippingRight":
+                    text.text = "Balayage à droite";
+                    break;
+                case "SwippingLeft":
+                    text.text = "Balayage à gauche";
+                    break;
+                case "SwippingUp":
+                    text.text = "Balayage vers le haut";
+                    break;
+                case "Running":
+                    text.text = "Course";
+                    break;
                 default:
-                    text.text = type.ToString();
-                    text.color = Color.green;
+                    text.text = myType;
                     break;
             }
+            text.color = Color.green;
         }
     }
 }

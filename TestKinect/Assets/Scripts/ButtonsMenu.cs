@@ -35,16 +35,16 @@ public class ButtonsMenu : MonoBehaviour {
 
     public void onPunchingButton()
     {
-        explanationsText.text = "Donnez un coup de poing vers la Kinect, en alignant main, coude et épaule.";
+        explanationsText.text = "Donnez un coup de poing vers la Kinect, en tendant bien le bras devant vous.";
     }
 
     public void onRunningButton()
     {
-        explanationsText.text = "Les coudes au corps : mettez la main gauche sur l'épaule gauche, et faites un angle de 90° avec votre bras droit. Puis inversez les positions de vos bras 3 fois.";
+        explanationsText.text = "Les coudes au corps : mettez la main gauche sur l'épaule gauche, et faites un angle de 90° avec votre bras droit. Puis inversez les positions de vos bras 4 à 6 fois.";
     }
 
     public void onClosingButton()
     {
-        explanationsText.text = "Les coudes au corps, écartez vos mains au maximum. Puis refermez-les devant vous.";
+        explanationsText.text = "Mettez vos deux mains à la hauteur de vos épaules, puis écartez-les. Ensuite, refermez-les devant vous.";
     }
 }

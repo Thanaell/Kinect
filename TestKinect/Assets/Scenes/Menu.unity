@@ -180,7 +180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Closing
+  m_Text: 'Fermeture
 
 '
 --- !u!222 &47986006
@@ -639,9 +639,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Swiping Right
-
-'
+  m_Text: "Balayage \xE0 droite"
 --- !u!222 &593665513
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -716,9 +714,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Swiping Left
-
-'
+  m_Text: "Balayage \xE0 gauche"
 --- !u!222 &598795874
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1348,9 +1344,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Running
-
-'
+  m_Text: Course
 --- !u!222 &1179198197
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1425,9 +1419,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Punching
-
-'
+  m_Text: Coup de poing
 --- !u!222 &1343831348
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1836,8 +1828,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 163.97}
-  m_SizeDelta: {x: 384.17, y: 56.34}
+  m_AnchoredPosition: {x: 27.2, y: 164.5}
+  m_SizeDelta: {x: 438.6, y: 57.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1763934833
 MonoBehaviour:
@@ -1871,8 +1863,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Cliquez sur un geste pour plus de d\xE9tails.\nClosing vous permet de revenir
-    au menu."
+  m_Text: "Cliquez sur un geste pour plus de d\xE9tails.\n\"Fermeture\" vous permet
+    de revenir au menu."
 --- !u!222 &1763934834
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2070,9 +2062,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Swiping Up
-
-'
+  m_Text: Balayage en haut
 --- !u!222 &1854156913
 CanvasRenderer:
   m_ObjectHideFlags: 0
