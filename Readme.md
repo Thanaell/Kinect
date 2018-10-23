@@ -2,6 +2,8 @@
 
 **Gestes (théoriquement) reconnus :**
 
+![Menu de l'application](CaptureMenu.PNG)
+
 -*Balayage à droite* : position de départ coude droit au corps, main droite au-dessus du coude. On tend le bras vers la droite horizontalement en alignant épaule, coude, et main. Puis retour à la position de départ.
 
 -*Balayage à gauche* : position de départ coude droit au corps, main droite au-dessus du coude. On tend le bras vers la gauche horizontalement en alignant épaule, coude, et main. Puis retour à la position de départ.
@@ -16,10 +18,16 @@
 
 La durée pour effectuer chaque geste peut être réglée dans les paramètres des scripts correspondants. Après la reconnaissance d’un geste, il faut attendre un cooldown pour en faire un autre. La valeur du cooldown est réglable dans le GestureHandler.
 
+
+![Capture d'écran : détection du Balayage vers le haut](CaptureScene2.PNG)
+
+![Capture d'écran : pas de détection de l'utilisateur](CaptureScene1.PNG)
+
 **Solutions algorithmiques choisies pour la détection :**
 Notre détection se base sur la reconnaissance de positions successives, effectuées dans un certain temps (variable ajustable). Par exemple, le geste Swiping Right commence avec le coude droit au corps, et la main au-dessus (position1). Puis on doit aligner les trois articulations du bras vers la droite (position2). Puis on retourne au début (position1).
 Ainsi, le geste est reconnu si on est passé de la position 1 à la position 2 en un temps défini, puis de la position 2 à la position 1 dans ce même temps.
-Une fois le geste reconnu, un évènement est envoyé au GestureHandler qui gère l’affichage et plus généralement, les actions à accomplir en réponse à un geste (par exemple, retourner au menu pour le geste Closing).
+*Remarque* : toutes les marges utilisées pour les alignements, ainsi que les temps alloués pour chaque geste, sont ajustables dans l'inspecteur.
+Une fois le geste reconnu, un évènement (UnityEvent) est envoyé au GestureHandler qui gère l’affichage et plus généralement, les actions à accomplir en réponse à un geste (par exemple, retourner au menu pour le geste Fermeture).
 
 **Pour utiliser le package KinectPackage :**
 

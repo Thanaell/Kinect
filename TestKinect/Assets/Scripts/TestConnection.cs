@@ -12,7 +12,7 @@ public class TestConnection : MonoBehaviour {
     
     void Start () {
         objectTest = GameObject.Find("TestConnection");
-        connectionText.text = "Pas de Kinect";
+        connectionText.text = "Pas de détection";
         tempPosition = objectTest.transform.position;
 	}
 	
@@ -20,12 +20,12 @@ public class TestConnection : MonoBehaviour {
 	void Update () {
 		if (objectTest.transform.position == tempPosition)
         {
-            connectionText.text = "Pas de Kinect";
+            connectionText.text = "Pas de détection";
             connectionText.color = Color.red;
         }
         else
         {
-            connectionText.text = "Kinect détectée";
+            connectionText.text = "Utilisateur détecté";
             connectionText.color = Color.green;
         }
         tempPosition = objectTest.transform.position;

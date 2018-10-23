@@ -718,6 +718,62 @@ Prefab:
       propertyPath: coolDown
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4533273685335500, guid: e76366f4ea2390f41bcf33b1799582ca, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.426
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212243410296336, guid: e76366f4ea2390f41bcf33b1799582ca, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.434
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757293806877054, guid: e76366f4ea2390f41bcf33b1799582ca, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.242
+      objectReference: {fileID: 0}
+    - target: {fileID: 4145271147426892, guid: e76366f4ea2390f41bcf33b1799582ca, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.388
+      objectReference: {fileID: 0}
+    - target: {fileID: 4145271147426892, guid: e76366f4ea2390f41bcf33b1799582ca, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.126
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674081650565338, guid: e76366f4ea2390f41bcf33b1799582ca, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.219
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674081650565338, guid: e76366f4ea2390f41bcf33b1799582ca, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.061
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443532395273782, guid: e76366f4ea2390f41bcf33b1799582ca, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904606404831524, guid: e76366f4ea2390f41bcf33b1799582ca, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.361
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904606404831524, guid: e76366f4ea2390f41bcf33b1799582ca, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.156
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042539195404644, guid: e76366f4ea2390f41bcf33b1799582ca, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.247
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042539195404644, guid: e76366f4ea2390f41bcf33b1799582ca, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212243410296336, guid: e76366f4ea2390f41bcf33b1799582ca, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.373
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533273685335500, guid: e76366f4ea2390f41bcf33b1799582ca, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.369
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e76366f4ea2390f41bcf33b1799582ca, type: 2}
   m_IsPrefabAsset: 0
@@ -788,7 +844,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pas de Kinect
+  m_Text: "Pas de d\xE9tection"
 --- !u!222 &1803470737
 CanvasRenderer:
   m_ObjectHideFlags: 0
