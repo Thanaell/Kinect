@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Running : Gesture {
- 
+
+    //l'erreur autorisée sur x
     [SerializeField]
     float deltaX = 0.1f;
 
+    //l'erreur autorisée sur y
     [SerializeField]
     float deltaY = 0.1f;
 
@@ -35,6 +37,12 @@ public class Running : Gesture {
 
     public override void detect()
     {
+        /*
+         * Première position
+         * coude et main droites sont quasi alignées en z, l'épaule droite est plus haut que le coude droit mais alligné en x avec ce dernier
+         * épaule et main gauches sont quasi alignées en z, l'épaule gauche est plus haut que le coude gauche mais alligné en x avec ce dernier
+         * 
+         */
         if (Mathf.Abs(coudeDroit.transform.position.x - mainDroite.transform.position.x) < deltaX &
             Mathf.Abs(coudeDroit.transform.position.y - mainDroite.transform.position.y) < deltaY &
             epauleDroite.transform.position.y > coudeDroit.transform.position.y + deltaY &
@@ -44,6 +52,10 @@ public class Running : Gesture {
             epauleGauche.transform.position.y > coudeGauche.transform.position.y + deltaY &
             Mathf.Abs(epauleGauche.transform.position.x - coudeGauche.transform.position.x) < deltaX)
         {
+            /*
+            * Troisième position
+            * Repetition de la première position
+            */
             if (SecondPosition)
             {
 
@@ -76,6 +88,10 @@ public class Running : Gesture {
             ThirdPosition = false;
         }
 
+        /*
+         * Deuxieme position
+         * Première position en inversant les deux bras
+         */
         if (Mathf.Abs(epauleDroite.transform.position.x - mainDroite.transform.position.x) < deltaX &
                 Mathf.Abs(epauleDroite.transform.position.y - mainDroite.transform.position.y) < deltaY &
                 epauleDroite.transform.position.y > coudeDroit.transform.position.y + deltaY &
@@ -93,6 +109,10 @@ public class Running : Gesture {
                 FirstPosition = false;
                 timerBackwardForward = 0;
             }
+            /*
+            * Quatrième position
+            * Repetition de la deuxième position => detection du mouvement en entier
+            */
             if (ThirdPosition)
             {
                 isDetected = true;
